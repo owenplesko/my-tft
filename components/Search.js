@@ -1,14 +1,16 @@
 import React from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
+import DropDown from './DropDown'
 
 const Search = () => {
   return (
     <div className='searchbar'>
-        <input type='text' className='input component' placeholder='Summoner Name...'/>
-        <button className='btn component'>
-            <AiOutlineSearch size={25}/>
+        <DropDown/>
+        <input type='text' className='input border' placeholder='Summoner Name...'/>
+        <button className='btn border'>
+            <AiOutlineSearch size={20}/>
         </button>
-	</div>
+	  </div>
   )
 }
 

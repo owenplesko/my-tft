@@ -1,20 +1,35 @@
 :root {
   --richblack: #02111b;
   --fedora: #121D26;
-  --onyx: #3f4045;
+  --blackcoral: #595C6A;
   --raisinblack: #30292f;
+  --onyx: #3C3C43;
   --cadet: #5D737E;
   --white: #FCFCFC;
 }
 
 * {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
 }
 
 body {
   background: var(--fedora);
   padding: 0;
   margin: 0;
+}
+
+.header {
+  background-color: var(--richblack);
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -26,120 +41,103 @@ body {
 }
 
 .searchbar {
+  color: var(--white);
   width: 100%;
   max-width: 500px;
-  display: inline-flex;
-}
-
-.searchbar .component {
-  border: 1px solid ;
-  border-color: var(--richblack);
-  border-radius: 2px;
-  color: var(--white);
-  background: var(--raisinblack);
-  font-size: 18px;
-  outline: none;
-}
-
-.searchbar .input {
-  padding: 10px;
-  flex-grow: 1;
-  border-right: none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.searchbar .input::placeholder {
-  color: var(--onyx);
-}
-
-.searchbar .btn {
-  color: var(--white);
-  width: 40px;
-  border-left: none;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  cursor: pointer;
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: center;
 }
 
-.dropdown {
-  min-width: 15em;
-  position: relative;
-  margin: 2em;
+.searchbar * {
+  background-color: var(--raisinblack);
+  font-size: 18px;
 }
 
-.dropdown * {
-  box-sizing: border-box;
+.searchbar .border {
+  border: 1px solid var(--richblack);
+  border-radius: 2px;
 }
 
-.select {
-  background: var(--raisinblack);
-  color: var(--white);
+.searchbar .input {
+  color: inherit;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.searchbar .input::placeholder {
+  color: var(--blackcoral);
+}
+
+.searchbar .btn {
+  color: inherit;
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 10px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.searchbar .btn:hover {
+  color: var(--cadet);
+}
+
+.searchbar .dropdown {
+  color: inherit;
+  width: 80px;
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchbar .dropdown .select {
+  color: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  border: 2px var(--richblack) solid;
-  border-radius: 0.5em;
-  padding: 1em;
-  cursor: pointer;
-  transition: background 0.3s;
+  text-align: left;
 }
 
-.select:hover {
-  background: var(--onyx);
+.searchbar .dropdown .select .selected {
+  color: inherit;
+  padding-left: 10px;
+  flex: 1;
 }
 
-.caret {
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid var(--white);
-  transition: 0.3s;
-}
-
-.caret-rotate {
-  transform: rotate(180deg);
-}
-
-.menu {
-  list-style: none;
-  padding: 0.2em 0.5em;
-  background: var(--raisinblack);
-  border: 1px var(--richblack) solid;
-  box-shadow: 0 0.5em 1em black;
-  border-radius: 0.5em;
-  color: var(--white);
-  position: absolute;
-  top: 3em;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
-  opacity: 0;
-  display: none;
+.searchbar .dropdown .select .caret {
   transition: 0.2s;
-  z-index: 1;
 }
 
-.menu li {
-  padding: 0.7em 0.5em;
-  margin: 0.3em 0;
-  border-radius: 0.5em;
-  cursor: pointer;
+.searchbar .dropdown .select .active {
+  transform: rotateX(180deg);
 }
 
-.menu li:hover {
-  background: var(--onyx);
+.searchbar .dropdown .menu {
+  opacity: 80%;
+  height: 0;
 }
 
-.active {
-  background: var(--onyx);
+.searchbar .dropdown .menu .li {
+  display: flex;
+  padding: 5px 10px;
 }
 
-.menu-open {
-  display: block;
-  opacity: 1;
+.searchbar .dropdown .menu .selected {
+  background-color: var(--blackcoral);
+}
+
+.searchbar .dropdown .menu .li:hover{
+  background-color: var(--cadet);
 }
