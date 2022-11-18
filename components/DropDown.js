@@ -12,15 +12,16 @@ const DropDown = ({selection, selected, setSelected}) => {
     return (
         <div className='dropdown border'>
             <div className='head' onClick={() => setActive(!active)}>
-                <span className='item'>{selected}</span>
+                <span className='item'>{selected.text}</span>
                 <AiFillCaretDown className={active ? 'caret active' : 'caret'}/>
             </div>
             {active &&
                 <ul className='selection'>
                     { selection.map(item => 
-                        <li className={item === selected ? 'item selected' : 'item'}
+                        <li className={item.value === selected.value ? 'item selected' : 'item'}
+                            key={item.value}
                             onClick={() => onSelect(item)}>
-                            {item}
+                            {item.text}
                         </li>)
                     }
                 </ul>
