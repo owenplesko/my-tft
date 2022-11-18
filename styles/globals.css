@@ -19,11 +19,15 @@
 
 body {
   background: var(--fedora);
-  padding: 0;
-  margin: 0;
 }
 
-.header {
+
+
+
+/********************
+  NAV BAR
+ ********************/
+.navbar {
   background-color: var(--richblack);
   padding: 5px;
   display: flex;
@@ -32,15 +36,73 @@ body {
   align-items: center;
 }
 
-.main {
+
+
+
+/********************
+  DROP DOWN
+ ********************/
+ .dropdown {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 100px;
 }
 
-.searchbar {
+.dropdown .head {
+  color: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+}
+
+.dropdown .item {
+  user-select: none;
+  color: inherit;
+  padding: 5px 10px;
+  flex: 1;
+}
+
+.dropdown .head .caret {
+  transition: 0.2s;
+}
+
+.dropdown .head .active {
+  transform: rotateX(180deg);
+}
+
+.dropdown .selection {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  list-style-type: none;
+  opacity: 80%;
+  height: 0;
+}
+
+.dropdown .selection .selected {
+  background-color: var(--blackcoral);
+}
+
+.dropdown .selection .item:hover{
+  background-color: var(--cadet);
+}
+
+
+
+
+/********************
+  SUMMONER SEARCH
+ ********************/
+.summoner-search * {
+  background-color: var(--raisinblack);
+  font-size: 18px;
+}
+
+.summoner-search {
   color: var(--white);
   width: 100%;
   max-width: 500px;
@@ -50,17 +112,12 @@ body {
   justify-content: center;
 }
 
-.searchbar * {
-  background-color: var(--raisinblack);
-  font-size: 18px;
-}
-
-.searchbar .border {
+.summoner-search .border {
   border: 1px solid var(--richblack);
   border-radius: 2px;
 }
 
-.searchbar .input {
+.summoner-search .textfield {
   color: inherit;
   border-left: 0;
   border-right: 0;
@@ -69,11 +126,11 @@ body {
   flex-grow: 1;
 }
 
-.searchbar .input::placeholder {
+.summoner-search .textfield::placeholder {
   color: var(--blackcoral);
 }
 
-.searchbar .btn {
+.summoner-search .btn {
   color: inherit;
   border-left: 0;
   border-top-left-radius: 0;
@@ -85,59 +142,14 @@ body {
   cursor: pointer;
 }
 
-.searchbar .btn:hover {
+.summoner-search .btn:hover {
   color: var(--cadet);
 }
 
-.searchbar .dropdown {
+.summoner-search .dropdown {
   color: inherit;
   width: 80px;
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.searchbar .dropdown .select {
-  color: inherit;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: left;
-}
-
-.searchbar .dropdown .select .selected {
-  color: inherit;
-  padding-left: 10px;
-  flex: 1;
-}
-
-.searchbar .dropdown .select .caret {
-  transition: 0.2s;
-}
-
-.searchbar .dropdown .select .active {
-  transform: rotateX(180deg);
-}
-
-.searchbar .dropdown .menu {
-  opacity: 80%;
-  height: 0;
-}
-
-.searchbar .dropdown .menu .li {
-  display: flex;
-  padding: 5px 10px;
-}
-
-.searchbar .dropdown .menu .selected {
-  background-color: var(--blackcoral);
-}
-
-.searchbar .dropdown .menu .li:hover{
-  background-color: var(--cadet);
 }

@@ -1,28 +1,26 @@
 import {useState} from 'react'
 import {AiFillCaretDown} from 'react-icons/ai'
 
-const DropDown = () => {
-    const regions = ['NA', 'EUW', 'KR', 'OCE']
+const DropDown = ({selection, selected, setSelected}) => {
     const [active, setActive] = useState(false)
-    const [selected, setSelected] = useState(regions[0])
 
-    const onRegionSelect = (region) => {
-        setSelected(region)
+    const onSelect = (item) => {
+        setSelected(item)
         setActive(false)
     }
 
     return (
         <div className='dropdown border'>
-            <button className='select' onClick={() => setActive(!active)}>
-                <span className='selected'>{selected}</span>
+            <div className='head' onClick={() => setActive(!active)}>
+                <span className='item'>{selected}</span>
                 <AiFillCaretDown className={active ? 'caret active' : 'caret'}/>
-            </button>
+            </div>
             {active &&
-                <ul className='menu'>
-                    { regions.map(region => 
-                        <li className={region === selected ? 'li selected' : 'li'}
-                            onClick={() => onRegionSelect(region)}>
-                            {region}
+                <ul className='selection'>
+                    { selection.map(item => 
+                        <li className={item === selected ? 'item selected' : 'item'}
+                            onClick={() => onSelect(item)}>
+                            {item}
                         </li>)
                     }
                 </ul>
