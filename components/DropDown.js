@@ -13,7 +13,7 @@ const DropDown = ({selection, selected, setSelected}) => {
         <div className='dropdown border'>
             <div className='head' onClick={() => setActive(!active)}>
                 <span className='item'>{selected.text}</span>
-                <AiFillCaretDown className={active ? 'caret active' : 'caret'}/>
+                <AiFillCaretDown className={active ? 'caret rotate' : 'caret'}/>
             </div>
             {active &&
                 <ul className='selection'>

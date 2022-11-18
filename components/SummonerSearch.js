@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import DropDown from './DropDown'
 
-const SummonerSearch = ({setData}) => {
+const SummonerSearch = ({searchSummoner}) => {
   const regions = [
     {text: 'NA', value: 'NA1'},
     {text: 'EUW', value: 'EUW'},
@@ -16,26 +16,19 @@ const SummonerSearch = ({setData}) => {
     {text: 'RU', value: 'RU'},
     {text: 'TR', value: 'TR1'}
   ]
-  const apikey = 'RGAPI-3173364a-d705-4173-a216-3d73ac7ff40d'
   const [region, setRegion] = useState(regions[0])
   const [summoner, setSummoner] = useState('')
 
-  const searchSummoner = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault()
     if(!summoner)
       return
-
-    fetch(`https://${region.value}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}?api_key=${apikey}`)
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setData(data)
-      })
+    
+    searchSummoner(region.value, summoner)
   }
 
   return (
-    <form className='summoner-search' onSubmit={searchSummoner}>
+    <form className='summoner-search' onSubmit={onSearch}>
         <DropDown selection={regions} selected={region} setSelected={setRegion}/>
         <input 
           type='text' 
