@@ -6,8 +6,8 @@ import styles from '../styles/NavBar.module.css'
 const NavBar = () => {
     const router = useRouter()
 
-    const searchSummoner = (name) => {
-        router.push(`/profile/${name}`)
+    const searchSummoner = (region, name) => {
+        router.push(`/profile/${region}/${name}`)
     }
 
     return (
