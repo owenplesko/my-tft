@@ -1,0 +1,44 @@
+.summonersearch {
+    background: var(--raisinblack);
+    font-size: 18px;
+    color: var(--white);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+  
+.textfield {
+    background: inherit;
+    color: inherit;
+    padding: 10px;
+    flex-grow: 1;
+}
+  
+.textfield::placeholder {
+    color: var(--blackcoral);
+}
+  
+.btn {
+    background: inherit;
+    color: inherit;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.1s;
+    cursor: pointer;
+}
+  
+.btn:hover {
+    color: var(--cadet);
+}
+
+.dropdown {
+    background: inherit;
+    color: inherit;
+    width: 80px;
+}
+  
