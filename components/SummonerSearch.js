@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import DropDown from './DropDown'
 
-const SummonerSearch = ({searchSummoner}) => {
+const SummonerSearch = ({search}) => {
   const regions = [
     {text: 'NA', value: 'NA1'},
     {text: 'EUW', value: 'EUW'},
@@ -19,12 +19,12 @@ const SummonerSearch = ({searchSummoner}) => {
   const [region, setRegion] = useState(regions[0])
   const [summoner, setSummoner] = useState('')
 
-  const onSubmit = (e) => {
+  const onSearch = (e) => {
     e.preventDefault()
     if(!summoner)
       return
     
-    searchSummoner(region.value, summoner)
+    search(summoner)
   }
 
   return (

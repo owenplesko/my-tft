@@ -1,17 +1,17 @@
 import React from 'react'
 import SummonerSearch from './SummonerSearch'
+import {useRouter} from 'next/router'
 
 const NavBar = () => {
-    const apikey = 'RGAPI-3173364a-d705-4173-a216-3d73ac7ff40d'
+    const router = useRouter()
 
-    const searchSummoner = (region, summoner) => {
-        const response = await fetch(`https://${region.value}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summoner}?api_key=${apikey}`)
-        return await response.json()
+    const searchSummoner = (name) => {
+        router.push(`/profile/${name}`)
     }
 
     return (
         <h1 className='navbar'>
-            <SummonerSearch/>
+            <SummonerSearch search={searchSummoner}/>
         </h1>
     )
 }
