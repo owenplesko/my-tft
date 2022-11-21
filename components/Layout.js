@@ -1,10 +1,14 @@
 import NavBar from './NavBar'
+import Head from 'next/head'
 
 const Layout = ({children}) => {
   return (
     <div>
+      <Head>
+        <title>My TFT</title>
+      </Head>
       <NavBar/>
-      <div> {children} </div>
+      {children}
     </div>
   )
 }

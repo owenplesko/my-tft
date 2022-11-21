@@ -38,6 +38,7 @@
 
 .dropdown {
     background: inherit;
+    font-weight: bold;
     color: inherit;
     width: 80px;
 }

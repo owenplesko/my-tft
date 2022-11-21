@@ -1,0 +1,19 @@
+.profile {
+    color: var(--white);
+    padding: 24px;
+    width: 50%;
+    background: var(--richblack);
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+}
+
+.summonericon {
+    width: 100px;
+    height: 100px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+}
