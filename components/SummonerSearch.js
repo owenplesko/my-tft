@@ -3,7 +3,7 @@ import {AiOutlineSearch} from 'react-icons/ai'
 import DropDown from './DropDown'
 import styles from '../styles/SummonerSearch.module.css'
 
-const SummonerSearch = ({search}) => {
+const SummonerSearch = ({searchSummoner}) => {
   const regions = [
     {text: 'NA', value: 'na1'},
     {text: 'EUW', value: 'euw'},
@@ -25,8 +25,7 @@ const SummonerSearch = ({search}) => {
     if(!summoner)
       return
     
-    search(region.value, summoner)
-    setSummoner('')
+    searchSummoner(region.value, summoner)
   }
 
 return (

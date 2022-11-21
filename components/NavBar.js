@@ -12,7 +12,7 @@ const NavBar = () => {
 
     return (
         <h1 className={styles.navbar}>
-            <SummonerSearch search={searchSummoner}/>
+            <SummonerSearch searchSummoner={searchSummoner}/>
         </h1>
     )
 }
