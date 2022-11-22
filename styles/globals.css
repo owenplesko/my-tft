@@ -1,11 +1,12 @@
 :root {
-  --richblack: #02111b;
-  --fedora: #121D26;
-  --blackcoral: #595C6A;
-  --raisinblack: #30292f;
-  --onyx: #3C3C43;
-  --cadet: #5D737E;
-  --white: #FCFCFC;
+  --accent: #472866;
+  --dark3: #10101b;
+  --dark2: #232338;
+  --dark1: #404050;
+  --dark0: #6B6A7C;
+  --light1: #F9F9F9;
+  --light2: #C2C2C2;
+  --light3: #696969;
 }
 
 * {
@@ -18,5 +19,5 @@
 }
 
 body {
-  background: var(--fedora);
+  background: var(--dark1);
 }

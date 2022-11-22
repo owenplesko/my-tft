@@ -11,7 +11,7 @@ const DropDown = ({className, selection, selected, setSelected}) => {
     }
 
     return (
-        <div className={`${styles.dropdown} ${className}`}>
+        <div className={`${className} ${styles.dropdown}`}>
             <div className={styles.head} onClick={() => setActive(!active)}>
                 <span className={styles.item}>{selected.text}</span>
                 <AiFillCaretDown className={`${styles.caret} ${active ? styles.rotate : ''}`}/>

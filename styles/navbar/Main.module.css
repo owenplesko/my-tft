@@ -1,0 +1,16 @@
+.navbar {
+    background-color: var(--dark3);
+    box-shadow: 0 2px 10px 0 black;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.summonersearch {
+    background-color: var(--dark2);
+    font-size: 18px;
+    color: var(--light1);
+    max-width: 500px;
+}

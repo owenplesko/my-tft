@@ -1,15 +1,11 @@
 .summonersearch {
-    background: var(--raisinblack);
-    font-size: 18px;
-    color: var(--white);
     width: 100%;
-    max-width: 500px;
     display: flex;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
 }
-  
+
 .textfield {
     background: inherit;
     color: inherit;
@@ -18,7 +14,7 @@
 }
   
 .textfield::placeholder {
-    color: var(--blackcoral);
+    color: var(--light2);
 }
   
 .btn {
@@ -33,13 +29,12 @@
 }
   
 .btn:hover {
-    color: var(--cadet);
+    color: var(--light3);
 }
 
 .dropdown {
     background: inherit;
     font-weight: bold;
     color: inherit;
-    width: 80px;
+    width: 4.5em;
 }
-  

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
-import DropDown from './DropDown'
-import styles from '../styles/SummonerSearch.module.css'
+import DropDown from '../DropDown'
+import styles from '../../styles/navbar/SummonerSearch.module.css'
 
-const SummonerSearch = ({searchSummoner}) => {
+const SummonerSearch = ({className, searchSummoner}) => {
   const regions = [
     {text: 'NA', value: 'na1'},
     {text: 'EUW', value: 'euw'},
@@ -29,7 +29,7 @@ const SummonerSearch = ({searchSummoner}) => {
   }
 
 return (
-  <form className={styles.summonersearch} onSubmit={onSearch}>
+  <form className={`${className} ${styles.summonersearch}`} onSubmit={onSearch}>
     <DropDown className={styles.dropdown} selection={regions} selected={region} setSelected={setRegion}/>
     <input 
       type='text' 

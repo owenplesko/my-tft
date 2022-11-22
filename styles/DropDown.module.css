@@ -44,9 +44,9 @@
 }
   
 .selection .selected {
-    background: var(--blackcoral);
+    background: var(--accent);
 }
   
 .selection .item:hover{
-    background: var(--cadet);
+    background: var(--dark1);
 }
