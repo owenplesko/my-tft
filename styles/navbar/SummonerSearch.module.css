@@ -4,6 +4,8 @@
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
+    border: 2px solid var(--dark2);
+    border-radius: 5px;
 }
 
 .textfield {
