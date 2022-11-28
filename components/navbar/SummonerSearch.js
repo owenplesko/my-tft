@@ -1,23 +1,9 @@
-import React, { useState } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
-import DropDown from '../DropDown'
-import styles from '../../styles/navbar/SummonerSearch.module.css'
+import RegionSelector from './RegionSelector'
+import {useState} from 'react'
 
-const SummonerSearch = ({className, searchSummoner}) => {
-  const regions = [
-    {text: 'NA', value: 'na1'},
-    {text: 'EUW', value: 'euw'},
-    {text: 'EUNE', value: 'eun1'},
-    {text: 'KR', value: 'kr'},
-    {text: 'JP', value: 'jp'},
-    {text: 'BR', value: 'br'},
-    {text: 'LAN', value: 'la1'},
-    {text: 'LAS', value: 'la2'},
-    {text: 'OCE', value: 'oc1'},
-    {text: 'RU', value: 'ru'},
-    {text: 'TR', value: 'tr1'}
-  ]
-  const [region, setRegion] = useState(regions[0])
+const SummonerSearch = ({searchSummoner}) => {
+  const [region, setRegion] = useState(process.env.regions[0])
   const [summoner, setSummoner] = useState('')
 
   const onSearch = (e) => {
@@ -25,20 +11,21 @@ const SummonerSearch = ({className, searchSummoner}) => {
     if(!summoner)
       return
     
-    searchSummoner(region.value, summoner)
+    searchSummoner(region, summoner)
   }
 
 return (
-  <form className={`${className} ${styles.summonersearch}`} onSubmit={onSearch}>
-    <DropDown className={styles.dropdown} selection={regions} selected={region} setSelected={setRegion}/>
-    <input 
+  <form className='flex items-center w-[550px] bg-dark2 text-light1 rounded-sm'
+        onSubmit={onSearch}>
+    <RegionSelector selected={region} setSelected={setRegion}/>
+    <input
       type='text' 
-      className={styles.textfield}
+      className='flex-grow bg-transparent placeholder:text-dark3'
       value={summoner}
       placeholder='Summoner Name...'
       onChange={(e) => setSummoner(e.target.value)}
     />
-    <button className={styles.btn}>
+    <button className='p-2 hover:text-darkAccent3'>
       <AiOutlineSearch size={20}/>
     </button>
 	</form>

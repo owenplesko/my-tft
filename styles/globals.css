@@ -1,22 +1,13 @@
-:root {
-  --accent: #472866;
-  --dark3: #10101b;
-  --dark2: #232338;
-  --dark1: #404050;
-  --light1: #F9F9F9;
-  --light2: #C2C2C2;
-  --light3: #696969;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
   outline: none;
-  border: none;
   box-sizing: border-box;
 }
 
 body {
-  background: var(--dark1);
+  @apply bg-dark2;
 }
