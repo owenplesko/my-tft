@@ -5,10 +5,10 @@ const nextConfig = {
     domains: ['ddragon.leagueoflegends.com', 'raw.communitydragon.org']
   },
   env: {
-    regions: ['na1', 'euw', 'eun1', 'kr', 'jp', 'br', 'la1', 'la2', 'oc1', 'ru', 'tr1'],
+    regions: ['na1', 'euw1', 'eun1', 'kr', 'jp', 'br', 'la1', 'la2', 'oc1', 'ru', 'tr1'],
     regionsDisplayValues: {
       'na1': 'NA',
-      'euw': 'EUW',
+      'euw1': 'EUW',
       'eun1': 'EUNE',
       'kr': 'KR',
       'jp': 'JP',

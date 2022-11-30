@@ -4,10 +4,8 @@ const MatchCard = ({focusPuuid, matchInfo, matchId}) => {
 
     const getFocusData = (focusPuuid, participants) => {
         for (const player of participants) {
-            if(focusPuuid === player.puuid) {
-                console.log(player)
+            if(focusPuuid === player.puuid)
                 return player
-            }
         }
     }
 
